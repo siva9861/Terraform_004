@@ -1,6 +1,6 @@
 # Core Lambda Function Block
 resource "aws_lambda_function" "example" {
-  #filename         = data.archive_file.lambda_zip.output_path
+  filename         = "glueJobStatus.py"
   function_name    = "abc_publishGlueJobStatus"
   role             = "arn:aws:iam::456568168979:role/service-role/abc_publishGlueJobStatus-role-oz2s81mp"
   handler          = "lambda_function.lambda_handler"
