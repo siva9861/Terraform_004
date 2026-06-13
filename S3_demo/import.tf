@@ -8,7 +8,9 @@ resource "aws_lambda_function" "imported_lambda" {
   function_name = "abc_publishGlueJobStatus"
   role          = "arn:aws:iam::456568168979:role/service-role/abc_publishGlueJobStatus-role-oz2s81mp"
   handler       = "lambda_function.lambda_handler"
+  filename         = "lambda.zip"
   runtime       = "python3.14"
+  source_code_hash = filebase64sha256("lambda.zip")
 
   # Note: You can use Terraform's automatic code generation 
   # to automatically populate these configuration attributes.
